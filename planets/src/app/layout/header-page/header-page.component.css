@@ -1,0 +1,19 @@
+header {
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  width: 40px; /* Ajusta el tamaño de tu logo según sea necesario */
+}
+
+.user span {
+  margin-right: 10px;
+  color: black;
+}
+
+
+

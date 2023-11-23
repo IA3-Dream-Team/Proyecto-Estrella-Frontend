@@ -14,11 +14,11 @@ export class VideoScanComponent {
   ) {};
 
   uploadVideo(){
-    const data: VideoScan = {
+    const body: VideoScan = {
       username: 'Cris',
       video: '1234'
     }
-    this.videoScanFetchService.postVideoScan(data).subscribe((response) =>
+    this.videoScanFetchService.postVideoScan(body).subscribe((response) =>
       {
         console.log(response);
       }
