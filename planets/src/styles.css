@@ -2,15 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-.slick-list{padding:0 25% 0 25% !important;}
-
 body {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 .page--home header {
   background-color: transparent;
-  /* border-bottom: 0.5px solid white; */
 }
 
 .page--home header * {
