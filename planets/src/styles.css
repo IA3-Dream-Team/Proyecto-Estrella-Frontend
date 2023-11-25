@@ -9,7 +9,8 @@ body {
 }
 
 .page--home header {
-  background-color: black;
+  background-color: transparent;
+  /* border-bottom: 0.5px solid white; */
 }
 
 .page--home header * {

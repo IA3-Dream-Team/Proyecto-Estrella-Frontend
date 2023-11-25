@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-chatbot',
-  standalone: true,
-  imports: [CommonModule],
   templateUrl: './chatbot.component.html',
   styleUrl: './chatbot.component.css'
 })

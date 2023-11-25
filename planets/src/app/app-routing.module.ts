@@ -5,6 +5,8 @@ const routes: Routes = [
   { path:'', redirectTo: 'home', pathMatch: 'full' },
   { path:'home', loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule) },
   { path:'video-scan', loadChildren: () => import('./pages/video-scan/video-scan.module').then((m) => m.VideoScanModule) },
+  { path:'chatbot', loadChildren: () => import('./pages/chatbot/chatbot.module').then((m) => m.ChatbotModule) },
+  { path:'game', loadChildren: () => import('./pages/game/game.module').then((m) => m.GameModule) },
   { path: '**', redirectTo: 'home' }
 ];
 

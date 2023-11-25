@@ -30,9 +30,14 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "node_modules/slick-carousel/slick/slick.scss",
+              "node_modules/slick-carousel/slick/slick-theme.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/slick-carousel/slick/slick.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -65,10 +70,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "planets:build:production"
+              "buildTarget": "planets:build:production"
             },
             "development": {
-              "browserTarget": "planets:build:development"
+              "buildTarget": "planets:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -76,7 +81,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "planets:build"
+            "buildTarget": "planets:build"
           }
         },
         "test": {
