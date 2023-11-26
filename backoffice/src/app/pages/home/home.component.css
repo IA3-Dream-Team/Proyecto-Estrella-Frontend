@@ -1,0 +1,26 @@
+::ng-deep .slick-track {
+  display: flex !important;
+  align-items: center;
+}
+
+::ng-deep .slick-list{padding:0 30% 0 30% !important;}
+
+::ng-deep .slick-slide {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+
+.slide-img {
+  width: 55vh;
+  /* transition: width 0.5s ease; */
+}
+
+::ng-deep .slick-active.slick-center .slide-img {
+  width: 75vh;
+}
+
+::ng-deep .slick-slide:not(.slick-active.slick-center) .slide-img-cover {
+  display: none;
+}

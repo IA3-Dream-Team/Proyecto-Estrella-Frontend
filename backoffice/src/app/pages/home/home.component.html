@@ -1,0 +1,31 @@
+<div class="relative overflow-x-auto mx-5 mt-5">
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="py-3">
+                    Id alumno
+                </th>
+                <th scope="col" class="py-3">
+                    Nombre alumno
+                </th>
+                <th scope="col" class="py-3">
+                    Fecha
+                </th>
+                <th scope="col" class="py-3">
+                    Emoción
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let dashboard of dashboards">
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+              <td>{{dashboard.id}}</td>
+              <td>{{dashboard.username}}</td>
+              <td>{{dashboard.date}}</td>
+              <td>{{dashboard.emotion}}</td>
+            </tr>
+           </ng-container>
+        </tbody>
+    </table>
+</div>
+
