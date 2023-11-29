@@ -1,4 +1,4 @@
-<div class="grid grid-cols-4 items-center h-full">
+<div class="grid grid-cols-4 items-center h-full gap-6 px-6">
   @for (planet of planets; track planet.title) {
     <div class="slide">
       <div class="flex flex-col items-center relative group">
@@ -18,7 +18,7 @@
           <h1 class="text-5xl font-mono font-semibold">{{ planet.title }}</h1>
           <h2 class="text-3xl font-mono">{{ planet.subtitle }}</h2>
           <button
-            [routerLink]="['/' + planet.navigateTo]"
+            [routerLink]="['/game-selection/play-game']"
             type="button"
             class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 mt-2"
           >

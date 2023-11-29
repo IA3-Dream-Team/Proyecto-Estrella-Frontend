@@ -11,7 +11,6 @@ import { VideoScanFetchService } from 'src/app/shared/services/fetchs/video-scan
 })
 
 export class VideoScanComponent implements OnInit {
-  images: Observable<any> | undefined;
 
   constructor(
     private videoScanFetchService: VideoScanFetchService,
@@ -19,18 +18,11 @@ export class VideoScanComponent implements OnInit {
   ) {};
 
   ngOnInit() {
-    this.images = this.http.get('http://127.0.0.1:8000/videofeed/');
   }
 
-  uploadVideo(){
-    const body: VideoScan = {
-      username: 'Cris',
-      video: '1234'
-    }
-    this.videoScanFetchService.postVideoScan(body).subscribe((response) =>
-      {
-        console.log(response);
-      }
+  getVideoScanImage(){
+    this.videoScanFetchService.getVideoScanImage().subscribe((response) =>
+      {}
     );
   }
 }

@@ -6,7 +6,7 @@ const routes: Routes = [
   { path:'home', loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule) },
   { path:'video-scan', loadChildren: () => import('./pages/video-scan/video-scan.module').then((m) => m.VideoScanModule) },
   { path:'chatbot', loadChildren: () => import('./pages/chatbot/chatbot.module').then((m) => m.ChatbotModule) },
-  { path:'game-selection', loadChildren: () => import('./pages/game/game-selection.module').then((m) => m.GameSelectionModule) },
+  { path:'game-selection', loadChildren: () => import('./pages/game/game.module').then((m) => m.GameModule) },
   { path: '**', redirectTo: 'home' }
 ];
 
