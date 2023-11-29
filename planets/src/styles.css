@@ -6,10 +6,18 @@ body {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
-.page--home header {
-  background-color: transparent;
+main {
+ display: flex;
+ flex-direction: column;
 }
 
-.page--home header * {
-  color: white !important;
+main > app-home {
+  flex: 1;
 }
+
+main > :not(app-home):last-child {
+  flex: 1;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+

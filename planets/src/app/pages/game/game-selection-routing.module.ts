@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { GameComponent } from './game.component';
+import { GameSelectionComponent } from './game-selection/game-selection.component';
+
 
 const routes: Routes = [
-  { path:'', component: GameComponent },
+  { path:'', component: GameSelectionComponent },
 ];
+
+
+
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class GameRoutingModule { }
+export class GameSelectionRoutingModule { }

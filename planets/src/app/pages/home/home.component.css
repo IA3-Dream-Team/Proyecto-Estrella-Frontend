@@ -13,12 +13,12 @@
 }
 
 .slide-img {
-  width: 55vh;
+  width: 45vh;
   /* transition: width 0.5s ease; */
 }
 
 ::ng-deep .slick-active.slick-center .slide-img {
-  width: 75vh;
+  width: 60vh;
 }
 
 ::ng-deep .slick-slide:not(.slick-active.slick-center) .slide-img-cover {

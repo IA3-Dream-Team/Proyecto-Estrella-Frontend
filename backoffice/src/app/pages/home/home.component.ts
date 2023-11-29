@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { User } from 'src/app/shared/models/user.model';
+import { UserFetchService } from 'src/app/shared/services/fetchs/user-fetch.service';
 
 @Component({
   selector: 'app-home',
@@ -6,36 +8,47 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-  dashboards: any;
+  users:User[] = [];
 
-  constructor() {}
+  constructor(
+    private userFetchService: UserFetchService,
+  ) {}
 
   ngOnInit() {
-    this.dashboards = [
-      {
-        id: '12',
-        username: 'Cris',
-        date: '20/12/22',
-        emotion: 'Happy',
-      },
-      {
-        id: '13',
-        username: 'Arnau',
-        date: '20/12/22',
-        emotion: 'Sad',
-      },
-      {
-        id: '12',
-        username: 'Cris',
-        date: '20/12/22',
-        emotion: 'Afraid',
-      },
-      {
-        id: '13',
-        username: 'Arnau',
-        date: '20/12/22',
-        emotion: 'Happy',
-      },
-    ];
+    this.getUsers();
+
+    // this.users = [
+    //   {
+    //     userId: '12',
+    //     username: 'Cris',
+    //     date: '20/12/22',
+    //     emotion: 'Happy',
+    //   },
+    //   {
+    //     userId: '13',
+    //     username: 'Arnau',
+    //     date: '20/12/22',
+    //     emotion: 'Sad',
+    //   },
+    //   {
+    //     userId: '12',
+    //     username: 'Cris',
+    //     date: '20/12/22',
+    //     emotion: 'Afraid',
+    //   },
+    //   {
+    //     userId: '13',
+    //     username: 'Arnau',
+    //     date: '20/12/22',
+    //     emotion: 'Happy',
+    //   },
+    // ];
   }
+
+  private getUsers():void {
+    this.userFetchService.getUsers().subscribe((response)=>{
+      this.users = response.users;
+    })
+  }
+
 }

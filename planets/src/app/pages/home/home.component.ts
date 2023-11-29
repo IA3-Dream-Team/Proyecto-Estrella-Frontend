@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
         title: 'Marte',
         subtitle: 'Juegos',
         image: '/assets/images/mars.png',
-        navigateTo: 'game',
+        navigateTo: 'game-selection',
       },
     ];
   }

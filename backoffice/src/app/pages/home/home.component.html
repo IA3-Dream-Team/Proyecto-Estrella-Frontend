@@ -17,12 +17,12 @@
             </tr>
         </thead>
         <tbody>
-          <ng-container *ngFor="let dashboard of dashboards">
+          <ng-container *ngFor="let user of users">
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-              <td>{{dashboard.id}}</td>
-              <td>{{dashboard.username}}</td>
-              <td>{{dashboard.date}}</td>
-              <td>{{dashboard.emotion}}</td>
+              <td>{{user.userId}}</td>
+              <td>{{user.username}}</td>
+              <td>{{user.date}}</td>
+              <td>{{user.emotion}}</td>
             </tr>
            </ng-container>
         </tbody>
