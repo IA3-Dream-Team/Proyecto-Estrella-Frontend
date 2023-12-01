@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
         title: 'Neptuno',
         subtitle: 'Chatbot',
         image: '/assets/images/neptune.png',
-        navigateTo: 'chatbot',
+        navigateTo: 'chatbot-selection',
       },
       {
         title: 'Marte',
