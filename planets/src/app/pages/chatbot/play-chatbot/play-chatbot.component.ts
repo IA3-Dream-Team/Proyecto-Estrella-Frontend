@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-play-chatbot',
@@ -13,12 +14,17 @@ export class PlayChatbotComponent implements OnInit {
   messages: any= [];
   value: any = '';
   chatbotId: number = 1;
+  form!:FormGroup;
 
-  constructor(private route: ActivatedRoute) {}
+  constructor(
+    private route: ActivatedRoute,
+    private formBuilder: FormBuilder,
+    ) {}
 
   ngOnInit(): void {
     this.getChatbotIdFromUrl();
-    console.log(this.chatbotId)
+    this.initForm();
+    console.log(this.chatbotId);
   }
 
   getChatbotIdFromUrl() {
@@ -28,7 +34,17 @@ export class PlayChatbotComponent implements OnInit {
     this.chatbotId = chatbotIdParam ? +chatbotIdParam : this.chatbotId;
   }
 
-  sendMessage(){}
+  private initForm(): void {
+    this.form = this.formBuilder.group({
+      message: [''],
+    });
+  }
+
+  sendMessage(){
+    console.log(this.form.value);
+
+
+  }
   // constructor(public chatService: ChatService) { }
 
   // ngOnInit() {
