@@ -16,6 +16,7 @@ export class ChatbotSelectionComponent implements OnInit {
 
     this.cards = [
       {
+        id: 1,
         title: 'Asco',
         subtitle: 'Emoción del asco se da cuando...',
         image: '/assets/images/star-emotion-disgust.png',
@@ -24,6 +25,7 @@ export class ChatbotSelectionComponent implements OnInit {
         selectedGame: 'xxx',
       },
       {
+        id: 2,
         title: 'Ira',
         subtitle: 'Emoción de la ira se da cuando...',
         image: '/assets/images/star-emotion-anger.png',
@@ -32,6 +34,7 @@ export class ChatbotSelectionComponent implements OnInit {
         selectedGame: 'xxx',
       },
       {
+        id: 3,
         title: 'Alegría',
         subtitle: 'Emoción de la alegría se da cuando...',
         image: '/assets/images/star-emotion-happy.png',
@@ -40,6 +43,7 @@ export class ChatbotSelectionComponent implements OnInit {
         selectedGame: 'xxx',
       },
       {
+        id: 4,
         title: 'Tristeza',
         subtitle: 'Emoción de la tristeza se da cuando...',
         image: '/assets/images/star-emotion-sad.png',
@@ -48,6 +52,7 @@ export class ChatbotSelectionComponent implements OnInit {
         selectedGame: 'xxx',
       },
       {
+        id: 5,
         title: 'Miedo',
         subtitle: 'Emoción del miedo se da cuando...',
         image: '/assets/images/star-emotion-afraid.png',
