@@ -1,12 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 
-
 @Component({
   selector: 'app-GameSelection',
   templateUrl: './game-selection.component.html',
-  styleUrl: './game-selection.component.css'
+  styleUrl: './game-selection.component.css',
 })
-
 export class GameSelectionComponent implements OnInit {
   planets: any;
 
@@ -15,46 +13,29 @@ export class GameSelectionComponent implements OnInit {
   ngOnInit() {
     this.planets = [
       {
-        title: 'Juego 1',
-        subtitle: 'Buscando a jimmy',
-        image: '/assets/images/star-rocket-1.png',
-        selectedGame: 'xxx',
+        id: 1,
+        title: 'Busca',
+        subtitle: 'Busca la emoción escondida',
+        image: '/assets/images/star-rocket-11-full.jpg',
       },
       {
-        title: 'Juego 2',
-        subtitle: 'Dominó Emociones',
-        image: '/assets/images/star-rocket-2.png',
-        selectedGame: 'xxx',
+        id: 2,
+        title: 'Dominó',
+        subtitle: 'Relaciona cada frase con su emoción',
+        image: '/assets/images/star-rocket-12-full.jpg',
       },
       {
-        title: 'Juego 3',
-        subtitle: 'Cesta emociones',
-        image: '/assets/images/star-rocket-3-full.jpg',
-        selectedGame: 'xxx',
+        id: 3,
+        title: 'Cesta',
+        subtitle: 'Recolecta las emociones',
+        image: '/assets/images/star-rocket-10-full.jpg',
+
       },
       {
-        title: 'Juego 4',
-        subtitle: 'XXX',
-        image: '/assets/images/star-rocket-4.png',
-        selectedGame: 'xxx',
-      },
-            {
-        title: 'Juego 2',
-        subtitle: 'Dominó Emociones',
-        image: '/assets/images/star-rocket-5-full.jpg',
-        selectedGame: 'xxx',
-      },
-      {
-        title: 'Juego 3',
-        subtitle: 'Cesta emociones',
-        image: '/assets/images/star-rocket-6-full.jpg',
-        selectedGame: 'xxx',
-      },
-      {
-        title: 'Juego 4',
-        subtitle: 'XXX',
-        image: '/assets/images/star-rocket-7-full.jpg',
-        selectedGame: 'xxx',
+        id: 4,
+        title: 'Memory',
+        subtitle: 'Encuentras las parejas',
+        image: '/assets/images/star-rocket-8-full.jpg',
       },
     ];
   }

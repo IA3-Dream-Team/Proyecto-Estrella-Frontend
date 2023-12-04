@@ -1,19 +1,27 @@
-<div class="grid grid-cols-5 items-center h-full px-24 gap-7">
-  @for (card of cards; track card.title) {
-    <div class="slayer bg-white border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 transform hover:scale-105 transition-transform hover:shadow-red-lg">
-      <a href="#">
-        <img class="rounded-t-lg bg-white" src="{{card.image}}" alt="" />
-      </a>
-      <div class="p-5 bg-transparent text-black">
-        <a href="#">
-          <h5 class="mb-2 text-2xl font-bold tracking-tight {{card.color}}">{{card.title}}</h5>
-        </a>
-        <p class="mb-3 font-normal">{{card.subtitle}}</p>
-        <a href="#"
-          class="skills bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 mt-2">
-          ¡Descubre quién soy!
-        </a>
+<div class="flex items-center">
+  <div class="grid grid-cols-5 items-center px-24 gap-10">
+    @for (card of cards; track card.title) {
+    <div
+      class=" slayer flex flex-col items-center align-center h-full bg-white border-gray-200 rounded-lg hover:scale-110 transition-transform shadow-lg transition-shadow {{card.hoverColor}}"
+    >
+      <img class="rounded-t-lg" src="{{ card.image }}" alt="" />
+      <div
+        class="pb-5 bg-transparent text-black flex flex-col items-center flex-1"
+      >
+        <h1 class="mb-2 text-3xl font-bold tracking-tight {{ card.textColor }}">
+          {{ card.title }}
+        </h1>
+        <!-- <p class="mb-3 font-normal text-center">{{ card.subtitle }}</p> -->
+        <div class="flex-1 flex items-end">
+          <a
+            href="#"
+            class="skills bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 mt-2"
+          >
+            ¡Habla conmigo!
+          </a>
+        </div>
       </div>
     </div>
-  }
+    }
+  </div>
 </div>

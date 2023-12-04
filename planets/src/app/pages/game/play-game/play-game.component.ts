@@ -1,16 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-mini-GameSelection',
   templateUrl: './play-game.component.html',
-  styleUrl: './play-game.component.css'
+  styleUrl: './play-game.component.css',
 })
 export class PlayGameComponent implements OnInit {
   games: any;
+  gameId: number | null = 1;
 
-  constructor() {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
+    this.getGameIdFromUrl();
     this.games = [
       {
         title: 'game1',
@@ -29,6 +32,13 @@ export class PlayGameComponent implements OnInit {
       //   code: 'Juego 4',
       // },
     ];
+  }
+
+  getGameIdFromUrl() {
+    const gameIdParam = this.route.snapshot.paramMap.get('id');
+
+    // Convierte a número solo si gameIdParam no es nulo
+    this.gameId = gameIdParam ? +gameIdParam : null;
   }
 
   trackByFunction(index: number, game: any): string {

@@ -18,39 +18,45 @@ export class ChatbotSelectionComponent implements OnInit {
       {
         title: 'Asco',
         subtitle: 'Emoción del asco se da cuando...',
-        image: '/assets/images/star-emotion-disgust.jpg',
-        color: 'text-lime-500',
+        image: '/assets/images/star-emotion-disgust.png',
+        textColor: 'text-lime-500',
+        hoverColor: 'hover:shadow-lime-500',
         selectedGame: 'xxx',
       },
       {
         title: 'Ira',
         subtitle: 'Emoción de la ira se da cuando...',
-        image: '/assets/images/star-emotion-anger.jpg',
-        color: 'text-red-500',
+        image: '/assets/images/star-emotion-anger.png',
+        textColor: 'text-red-600',
+        hoverColor: 'hover:shadow-red-600',
         selectedGame: 'xxx',
       },
       {
         title: 'Alegría',
         subtitle: 'Emoción de la alegría se da cuando...',
-        image: '/assets/images/star-emotion-happy.jpg',
-        color: 'text-yellow-300',
+        image: '/assets/images/star-emotion-happy.png',
+        textColor: 'text-yellow-300',
+        hoverColor: 'hover:shadow-yellow-300',
         selectedGame: 'xxx',
       },
       {
         title: 'Tristeza',
         subtitle: 'Emoción de la tristeza se da cuando...',
-        image: '/assets/images/star-emotion-sad.jpg',
-        color: 'text-sky-500',
+        image: '/assets/images/star-emotion-sad.png',
+        textColor: 'text-sky-600',
+        hoverColor: 'hover:shadow-sky-600',
         selectedGame: 'xxx',
       },
       {
         title: 'Miedo',
         subtitle: 'Emoción del miedo se da cuando...',
-        image: '/assets/images/star-emotion-afraid.jpg',
-        color: 'text-purple-500',
+        image: '/assets/images/star-emotion-afraid.png',
+        textColor: 'text-purple-600',
+        hoverColor: 'hover:shadow-purple-600',
         selectedGame: 'xxx',
       },
     ];
+
 
     let slayers = document.querySelectorAll(".slayer");
 
