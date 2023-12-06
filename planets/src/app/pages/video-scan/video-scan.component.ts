@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { VideoScan } from 'src/app/shared/models/video-scan.model';
-import { VideoScanFetchService } from 'src/app/shared/services/fetchs/video-scan-fetch.service';
+import { VideoScanService } from 'src/app/shared/services/fetchs/video-scan.service';
 
 @Component({
   selector: 'app-video-scan',
@@ -12,21 +12,33 @@ import { VideoScanFetchService } from 'src/app/shared/services/fetchs/video-scan
 
 export class VideoScanComponent implements OnInit {
 
-  questions: string[] = [];
+  questions: any[] = [];
 
   constructor(
-    private videoScanFetchService: VideoScanFetchService,
+    private videoScanService: VideoScanService,
     private http: HttpClient,
-  ) {};
+  ) {}
 
   ngOnInit() {
     this.getVideoScanQuestions();
   }
 
-  getVideoScanQuestions(){
-    this.videoScanFetchService.getVideoScanQuestions().subscribe((response) =>
-      this.questions = response.questions
-    );
+  getVideoScanQuestions() {
+    this.videoScanService.getVideoScanQuestions().subscribe((response) => {
+      this.questions = response;
+    });
+  }
+
+  getStartVideoScan() {
+    this.videoScanService.getStartVideoScan().subscribe((response) => {
+      console.log(response);
+    });
+  }
+
+  getStopVideoScan() {
+    this.videoScanService.getStopVideoScan().subscribe((response) => {
+      console.log(response);
+    });
   }
 }
 

@@ -20,8 +20,8 @@ export class ChatbotSelectionComponent implements OnInit {
         title: 'Asco',
         subtitle: 'Emoción del asco se da cuando...',
         image: '/assets/images/star-emotion-disgust.png',
-        textColor: 'text-lime-500',
-        hoverColor: 'hover:shadow-lime-500',
+        textColor: 'text-green-500',
+        hoverColor: 'hover:shadow-green-500',
         selectedGame: 'xxx',
       },
       {
@@ -47,8 +47,8 @@ export class ChatbotSelectionComponent implements OnInit {
         title: 'Tristeza',
         subtitle: 'Emoción de la tristeza se da cuando...',
         image: '/assets/images/star-emotion-sad.png',
-        textColor: 'text-sky-600',
-        hoverColor: 'hover:shadow-sky-600',
+        textColor: 'text-sky-500',
+        hoverColor: 'hover:shadow-sky-500',
         selectedGame: 'xxx',
       },
       {

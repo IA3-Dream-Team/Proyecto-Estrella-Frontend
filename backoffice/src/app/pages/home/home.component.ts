@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   }
 
   private getUsers():void {
-    this.userFetchService.getUsers().subscribe((response)=>{
+    this.userFetchService.getUsers().subscribe((response) => {
       this.users = response.users;
     })
   }
