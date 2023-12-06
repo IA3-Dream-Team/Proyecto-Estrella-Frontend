@@ -4,7 +4,7 @@
       <h2
         class="mb-4 text-3xl font-bold leading-tight tracking-tight sm:text-3xl font-heading text-white"
       >
-        ¡Hola estrellita! Este es tu espacio personal para enviarme una cápsula
+        ¡Hola estrellita! ¡Este es tu rincón personal para enviarme un mensaje al espacio!
         al espacio.
       </h2>
       <!-- <div class="col-span-3 relative ml-4">
@@ -16,27 +16,27 @@
       </div> -->
     </div>
     <p class="mb-4 font-medium tracking-tight text-white xl:mb-6">
-      A continuación te dejo algunas preguntas que puedes responder:
+      Aquí te dejo algunas ideas sobre qué hablarme:
     </p>
     <ul>
-      <li><span class="font-medium text-white">Frase autogenerada 1</span></li>
-      <li><span class="font-medium text-white">Frase autogenerada 2</span></li>
-      <li>
-        <span class="font-medium text-white">Graba el tiempo que quieras!</span>
-      </li>
+      <li><span class="font-medium text-white">⭐Cuéntame, ¿cómo te sientes hoy?</span></li>
+      @for (question of questions; track $index) {
+        <li><span class="font-medium text-white">⭐{{question}}</span></li>
+      }
     </ul>
-    <div class="mt-4 flex gap-3">
+    <p class="font-medium text-white mt-5">¡Graba un máximo de 1 minuto!</p>
+    <!-- <div class="mt-4 flex gap-3">
       <a
         href="#"
-        class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 mt-2"
+        class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         >¡Empieza video!</a
       >
       <a
         href="#"
-        class="text-gray-900 bg-gradient-to-r from-teal-200 to-lime-200 hover:bg-gradient-to-l hover:from-teal-200 hover:to-lime-200 focus:ring-4 focus:outline-none focus:ring-lime-200 dark:focus:ring-teal-700 font-medium rounded-lg text-sm px-5 py-2.5 mt-2"
+        class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         >¡Para video!</a
       >
-    </div>
+    </div> -->
   </div>
   <div class="relative">
     <div

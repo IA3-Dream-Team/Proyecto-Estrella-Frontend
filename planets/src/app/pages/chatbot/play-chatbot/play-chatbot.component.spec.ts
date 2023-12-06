@@ -11,7 +11,7 @@ describe('PlayChatbotComponent', () => {
       imports: [PlayChatbotComponent]
     })
     .compileComponents();
-    
+
     fixture = TestBed.createComponent(PlayChatbotComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();

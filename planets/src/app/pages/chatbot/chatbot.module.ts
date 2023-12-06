@@ -4,6 +4,7 @@ import { ChatbotSelectionComponent } from './chatbot-selection/chatbot-selection
 import { PlayChatbotComponent } from './play-chatbot/play-chatbot.component';
 import { ChatbotRoutingModule } from './chatbot-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChatbotService } from 'src/app/shared/services/fetchs/chatbot.service';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ChatbotRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-  ]
+  ],
+  providers: [ChatbotService]
 })
 export class ChatbotModule { }

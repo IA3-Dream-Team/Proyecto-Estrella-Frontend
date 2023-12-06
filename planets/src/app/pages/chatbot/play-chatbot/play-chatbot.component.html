@@ -1,4 +1,4 @@
-<!-- <form action="">
+<div class="text-fuchsia-500">
   <h1>JSExpert Angular Chat Bot</h1>
   <ng-container *ngFor="let message of messages">
     <div class="message" [ngClass]="{ 'from': message.author === 'bot',
@@ -6,13 +6,11 @@
       {{ message.content }}
     </div>
   </ng-container>
-  <input [(ngModel)]="value" (keyup.enter)="sendMessage()" type="text">
+  <label *ngIf="messages.length == 0; else dialogInfo" for="nameField">Your message</label>
+  <input [(ng
+Model)]="value" (keyup.enter)="sendMessage()" type="text">
   <button (click)="sendMessage()">Send</button>
-</form> -->
-
-<form class="" [formGroup]="form" (ngSubmit)="sendMessage()">
-  <input class="" type="text" formControlName="message"/>
-  <button class="" type="submit">Enviar</button>
-</form>
-
-
+  <ng-template #dialogInfo>
+    <span [className]="'float-right'">Total messages: {{messages.length}}</span>
+  </ng-template>
+</div>

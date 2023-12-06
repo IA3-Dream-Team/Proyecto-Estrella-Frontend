@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { ActivatedRoute } from '@angular/router';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { ChatbotService, Message } from 'src/app/shared/services/fetchs/chatbot.service';
 
 @Component({
   selector: 'app-play-chatbot',
@@ -11,51 +9,19 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class PlayChatbotComponent implements OnInit {
 
-  messages: any= [];
-  value: any = '';
-  chatbotId: number = 1;
-  form!:FormGroup;
+  messages: Message[] = [];
+  value!: string;
 
-  constructor(
-    private route: ActivatedRoute,
-    private formBuilder: FormBuilder,
-    ) {}
+  constructor(public chatbotService: ChatbotService) { }
 
-  ngOnInit(): void {
-    this.getChatbotIdFromUrl();
-    this.initForm();
-    console.log(this.chatbotId);
-  }
-
-  getChatbotIdFromUrl() {
-    const chatbotIdParam = this.route.snapshot.paramMap.get('id');
-
-    // Convierte a número solo si chatbotIdParam no es nulo
-    this.chatbotId = chatbotIdParam ? +chatbotIdParam : this.chatbotId;
-  }
-
-  private initForm(): void {
-    this.form = this.formBuilder.group({
-      message: [''],
+  ngOnInit() {
+      this.chatbotService.conversation.subscribe((val) => {
+      this.messages = this.messages.concat(val);
     });
   }
 
-  sendMessage(){
-    console.log(this.form.value);
-
-
+  sendMessage() {
+    this.chatbotService.getBotAnswer(this.value);
+    this.value = '';
   }
-  // constructor(public chatService: ChatService) { }
-
-  // ngOnInit() {
-  //     this.chatService.conversation.subscribe((val) => {
-  //     this.messages = this.messages.concat(val);
-  //   });
-  // }
-
-  // sendMessage() {
-  //   this.chatService.getBotAnswer(this.value);
-  //   this.value = '';
-  // }
-
 }

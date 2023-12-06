@@ -12,17 +12,20 @@ import { VideoScanFetchService } from 'src/app/shared/services/fetchs/video-scan
 
 export class VideoScanComponent implements OnInit {
 
+  questions: string[] = [];
+
   constructor(
     private videoScanFetchService: VideoScanFetchService,
     private http: HttpClient,
   ) {};
 
   ngOnInit() {
+    this.getVideoScanQuestions();
   }
 
-  getVideoScanImage(){
-    this.videoScanFetchService.getVideoScanImage().subscribe((response) =>
-      {}
+  getVideoScanQuestions(){
+    this.videoScanFetchService.getVideoScanQuestions().subscribe((response) =>
+      this.questions = response.questions
     );
   }
 }

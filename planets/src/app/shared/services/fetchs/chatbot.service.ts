@@ -6,15 +6,13 @@ export class Message {
 }
 
 @Injectable()
-export class ChatService {
-  audioFile = new Audio(
-    "https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/success.mp3"
-  );
+export class ChatbotService {
+
   constructor() {}
 
   conversation = new Subject<Message[]>();
 
-  messageMap = {
+  messageMap: { [key: string]: string } = {
     Hi: "Hello",
     "Who are you": "My name is Agular Bot",
     "What is Angular": "Angular is the best framework ever",
@@ -27,17 +25,8 @@ export class ChatService {
     const botMessage = new Message("bot", this.getBotMessage(msg));
 
     setTimeout(() => {
-      this.playFile();
       this.conversation.next([botMessage]);
     }, 1500);
-  }
-
-  playFile() {
-    this.audioFile.play();
-  }
-
-  playAudio() {
-    this.playFile("https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/success.mp3");
   }
 
   getBotMessage(question: string) {
