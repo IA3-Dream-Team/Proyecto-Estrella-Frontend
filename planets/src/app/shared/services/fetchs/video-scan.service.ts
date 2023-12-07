@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, first, of } from 'rxjs';
-import { VideoScan } from '../../models/video-scan.model';
 
 @Injectable({
   providedIn: 'root'

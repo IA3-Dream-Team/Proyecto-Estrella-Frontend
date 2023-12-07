@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core";
-import { Observable, Subject } from "rxjs";
+import { Injectable } from '@angular/core';
+import { Observable, Subject } from 'rxjs';
 
 export class Message {
   constructor(public author: string, public content: string) {}
@@ -7,30 +7,63 @@ export class Message {
 
 @Injectable()
 export class ChatbotService {
+  conversations!: Map<string, any>;
 
-  constructor() {}
-
-  conversation = new Subject<Message[]>();
-
-  messageMap: { [key: string]: string } = {
-    Hi: "Hello",
-    "Who are you": "My name is Agular Bot",
-    "What is Angular": "Angular is the best framework ever",
-    default: "I can't understand. Can you please repeat"
-  };
-
-  getBotAnswer(msg: string) {
-    const userMessage = new Message("user", msg);
-    this.conversation.next([userMessage]);
-    const botMessage = new Message("bot", this.getBotMessage(msg));
-
-    setTimeout(() => {
-      this.conversation.next([botMessage]);
-    }, 1500);
+  constructor() {
+    this.setConversations();
   }
 
-  getBotMessage(question: string) {
-    let answer = this.messageMap[question];
-    return answer || this.messageMap["default"];
+  setConversations() {
+    this.conversations = new Map<string, any>([
+      [
+        'ira',
+        [
+          {
+            id: 1,
+            question:
+              '¿Cómo puedo calmarme cuando siento que la ira se apodera de mí?',
+            answer: `Entiendo que a veces puedo aparecer sin previo aviso. Primero, quiero que sepas que está bien sentir enojo. Soy una emoción normal y todos la experimentamos. Aquí van tres ideas para ayudarte a calmar mi sensación:`,
+          },
+          {
+            id: 2,
+            question:
+              '¿Cómo puedo calmarme cuando siento que la ira se apodera de mí?',
+            answer: `Entiendo que a veces puedo aparecer sin previo aviso. Primero, quiero que sepas que está bien sentir enojo. Soy una emoción normal y todos la experimentamos. Aquí van tres ideas para ayudarte a calmar mi sensación:`,
+          },
+        ],
+      ],
+      [
+        'alegría',
+        [
+          {
+            id: 1,
+            question:
+              '¿Cómo puedo calmarme cuando siento que la ira se apodera de mí?',
+            answer: `Entiendo que a veces puedo aparecer sin previo aviso. Primero, quiero que sepas que está bien sentir enojo. Soy una emoción normal y todos la experimentamos. Aquí van tres ideas para ayudarte a calmar mi sensación:`,
+          },
+          {
+            id: 2,
+            question:
+              '¿Cómo puedo calmarme cuando siento que la ira se apodera de mí?',
+            answer: `Entiendo que a veces puedo aparecer sin previo aviso. Primero, quiero que sepas que está bien sentir enojo. Soy una emoción normal y todos la experimentamos. Aquí van tres ideas para ayudarte a calmar mi sensación:`,
+          },
+        ],
+      ],
+    ]);
+  }
+
+  getEmotionConversation(emotionId: string) {
+    return this.conversations.get(emotionId) || [];
+  }
+
+  getEmotionQuestionAnswers(emotionId: string, conversationId: number) {
+    const emotionConversations = this.conversations.get(emotionId) || [];
+    if (emotionConversations) {
+      const question = emotionConversations.find(
+        (conversation: any) => conversation.id === conversationId
+      );
+      return question ? question.answer : 'Este pregunta es incorrecta';
+    }
+    return 'Esta emoción es incorrecta';
   }
 }
