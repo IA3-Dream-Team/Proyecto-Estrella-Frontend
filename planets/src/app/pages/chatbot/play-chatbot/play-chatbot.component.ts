@@ -40,7 +40,9 @@ export class PlayChatbotComponent implements OnInit {
   }
 
   sendMessage() {
-    console.log(this.form.value);
+    this.chat.push({ type: 'user', message: this.form.value.message });
+    const answer = this.chatbotService.getEmotionQuestionAnswers(this.chatbotId, this.form.value.message);
+    this.chat.push({ type: 'bot', message: answer });
   }
 
   setFirstMessage() {

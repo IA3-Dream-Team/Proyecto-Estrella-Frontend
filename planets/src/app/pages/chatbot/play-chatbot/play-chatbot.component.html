@@ -1,4 +1,17 @@
-<form class="" [formGroup]="form" (ngSubmit)="sendMessage()">
-  <input class="" type="text" formControlName="message"/>
-  <button class="" type="submit">Enviar</button>
-</form>
+<div>
+  <div
+    *ngFor="let message of chat"
+    class="message"
+    [ngClass]="{
+          from: message.type === 'bot',
+          to: message.type === 'user'
+        }"
+    [innerHTML]="message.message">
+  </div>
+
+
+  <form class="" [formGroup]="form" (ngSubmit)="sendMessage()">
+    <input class="" type="number" formControlName="message" />
+    <button class="" type="submit">Enviar</button>
+  </form>
+</div>

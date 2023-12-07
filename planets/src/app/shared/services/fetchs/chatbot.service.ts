@@ -59,10 +59,10 @@ export class ChatbotService {
   getEmotionQuestionAnswers(emotionId: string, conversationId: number) {
     const emotionConversations = this.conversations.get(emotionId) || [];
     if (emotionConversations) {
-      const question = emotionConversations.find(
+      const conversation = emotionConversations.find(
         (conversation: any) => conversation.id === conversationId
       );
-      return question ? question.answer : 'Este pregunta es incorrecta';
+      return conversation ? conversation.answer : 'Este pregunta es incorrecta';
     }
     return 'Esta emoción es incorrecta';
   }
