@@ -26,7 +26,13 @@ export class VideoScanService {
 
   getStartVideoScan(): Observable<any> {
     const url = 'http://127.0.0.1:8000/videofeed/';
-    return this.http.get(url)
+    const token = localStorage.getItem('token'); // Obtiene el token del localStorage
+    const httpOptions = {
+      headers: {
+        Authorization: `Token ${token}`
+      }
+    };
+    return this.http.get(url, httpOptions)
     .pipe(
       first()
     );
