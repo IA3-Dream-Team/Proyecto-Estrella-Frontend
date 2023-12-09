@@ -61,30 +61,5 @@ export class ChatbotSelectionComponent implements OnInit {
         selectedGame: 'xxx',
       },
     ];
-
-
-    let slayers = document.querySelectorAll(".slayer");
-
-    function removeClass(array:any, newclass:any) {
-      array.forEach((element:any) => {
-        if (element.classList.contains(newclass)) {
-          element.classList.remove(newclass);
-        }
-      });
-    }
-
-    slayers.forEach((slayer) => {
-      slayer.addEventListener("click", () => {
-        if (slayer.classList.contains("selected")) {
-          removeClass(slayers, "selected");
-        } else {
-          removeClass(slayers, "selected");
-          slayer.classList.add("selected");
-        }
-      });
-    });
   }
 }
-
-
-

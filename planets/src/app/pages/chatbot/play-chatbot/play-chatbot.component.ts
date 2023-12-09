@@ -8,6 +8,7 @@ import { ChatbotService } from 'src/app/shared/services/fetchs/chatbot.service';
   templateUrl: './play-chatbot.component.html',
   styleUrl: './play-chatbot.component.css',
 })
+
 export class PlayChatbotComponent implements OnInit {
   messages: any = [];
   value: any = '';
@@ -41,8 +42,11 @@ export class PlayChatbotComponent implements OnInit {
 
   sendMessage() {
     this.chat.push({ type: 'user', message: this.form.value.message });
-    const answer = this.chatbotService.getEmotionQuestionAnswers(this.chatbotId, this.form.value.message);
+    const answer = this.chatbotService.getEmotionQuestionAnswers(
+      this.chatbotId, this.form.value.message
+    );
     this.chat.push({ type: 'bot', message: answer });
+    this.form.reset();
   }
 
   setFirstMessage() {
@@ -50,8 +54,7 @@ export class PlayChatbotComponent implements OnInit {
       this.chatbotId
     );
 
-    let firstMessage = `Hola, que quieres saber sobre la emoción ${this.chatbotId} \n
-    Estas son las preguntas disponibles: \n`;
+    let firstMessage = `⭐Hola, que quieres saber sobre la emoción ${this.chatbotId}\n Estas son las preguntas disponibles:\n`;
 
     allEmotionConversations.forEach((conversation: any) => {
       firstMessage += `${conversation.id}. ${conversation.question}\n`;

@@ -11,7 +11,7 @@ import { VideoScanService } from 'src/app/shared/services/fetchs/video-scan.serv
 })
 
 export class VideoScanComponent implements OnInit {
-
+  isCameraOn = false;
   questions: any[] = [];
 
   constructor(
@@ -32,6 +32,7 @@ export class VideoScanComponent implements OnInit {
   getStartVideoScan() {
     this.videoScanService.getStartVideoScan().subscribe((response) => {
       console.log(response);
+      this.isCameraOn = true;
     });
   }
 

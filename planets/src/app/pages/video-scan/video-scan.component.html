@@ -32,13 +32,13 @@
     >
       ¡Empieza video!
     </button>
-      <button
+      <!-- <button
         type="button"
         class="text-white bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-cyan-300 dark:focus:ring-cyan-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
         (click)="getStopVideoScan()"
         >
         ¡Para video!
-      </button>
+      </button> -->
     </div>
   </div>
   <div class="relative">
@@ -46,6 +46,7 @@
       class="border-4 border-gray-300 p-4 rounded-lg flex items-center justify-center h-full"
     >
       <img
+        *ngIf="isCameraOn"
         alt="Webcam"
         class="max-h-full w-auto rounded-lg shadow-md"
         style="
@@ -56,6 +57,17 @@
           transition: background-color 300ms;
         "
         src="http://127.0.0.1:8000/videofeed/"
+      />
+      <img
+      *ngIf="!isCameraOn"
+        alt="Webcam"
+        class="max-h-full w-auto rounded-lg shadow-md"
+        style="
+          display: block;
+          -webkit-user-select: none;
+          margin: auto;
+        "
+        src="/assets/images/star-rocket-11-full.jpg"
       />
     </div>
   </div>

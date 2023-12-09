@@ -62,7 +62,7 @@ export class ChatbotService {
       const conversation = emotionConversations.find(
         (conversation: any) => conversation.id === conversationId
       );
-      return conversation ? conversation.answer : 'Este pregunta es incorrecta';
+      return conversation ? conversation.answer : 'Esta pregunta es incorrecta';
     }
     return 'Esta emoción es incorrecta';
   }
