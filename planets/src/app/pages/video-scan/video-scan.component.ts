@@ -32,8 +32,8 @@ export class VideoScanComponent implements OnInit {
   getStartVideoScan() {
     this.videoScanService.getStartVideoScan().subscribe((response) => {
       console.log(response);
-      this.isCameraOn = true;
     });
+    this.isCameraOn = true;
   }
 
   getStopVideoScan() {
