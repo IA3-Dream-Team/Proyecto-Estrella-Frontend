@@ -1,0 +1,9 @@
+.slide-img-cover {
+    max-width: 256px;
+    margin: auto;
+}
+
+.slide-img-cover h2 {
+    padding: 0 6px;
+    text-align: center;
+}
